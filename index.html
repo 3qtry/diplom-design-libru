@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ec">
+  <title>Lib.ru — библиотека текстов</title>
+  <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%2320241f'/%3E%3Cg fill='%23fffefa'%3E%3Crect x='4' y='11' width='3' height='18'/%3E%3Crect x='4' y='26' width='7' height='3'/%3E%3Crect x='22' y='11' width='14' height='3'/%3E%3Crect x='22' y='18.5' width='8' height='3'/%3E%3Crect x='22' y='26' width='14' height='3'/%3E%3C/g%3E%3Cpolygon points='12,29 15,29 20,11 17,11' fill='%23c45129'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="site-additions.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" data-view="home" aria-label="Lib.ru — на главную"><span class="brand-mark"><svg class="logo-img logo-light-theme" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#20241f"/><g fill="#fffefa" shape-rendering="crispEdges"><rect x="4" y="11" width="3" height="18"/><rect x="4" y="26" width="7" height="3"/><rect x="22" y="11" width="14" height="3"/><rect x="22" y="18.5" width="8" height="3"/><rect x="22" y="26" width="14" height="3"/></g><polygon points="12,29 15,29 20,11 17,11" fill="#c45129"/></svg><svg class="logo-img logo-dark-theme" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#fffefa"/><g fill="#20241f" shape-rendering="crispEdges"><rect x="4" y="11" width="3" height="18"/><rect x="4" y="26" width="7" height="3"/><rect x="22" y="11" width="14" height="3"/><rect x="22" y="18.5" width="8" height="3"/><rect x="22" y="26" width="14" height="3"/></g><polygon points="12,29 15,29 20,11 17,11" fill="#c45129"/></svg></span><span>LIB.RU<small>БИБЛИОТЕКА МАКСИМА МОШКОВА</small></span></a>
+      <nav class="main-nav" aria-label="Основная навигация"><a class="active" data-view="home" href="#home">Главная</a><a data-view="catalog" href="#catalog">Каталог</a><a data-view="authors" href="#authors">Авторы</a><a data-view="hitparad" href="#hitparad">Хит-парад</a><a data-view="guests" href="#guests">Мои гости</a><a data-view="community" href="#community">Сообщество</a><a data-view="about" href="#about">О проекте</a></nav>
+      <div class="top-actions"><button class="search-trigger" id="searchOpen" aria-label="Открыть поиск"><span>⌕</span></button><button class="icon-button theme-toggle" id="themeToggle" aria-label="Переключить тему">◐</button><button class="signin">Войти <span>↗</span></button><button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button></div>
+    </header>
+
+    <main class="page-view" id="home">
+      <section class="hero">
+        <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> ЭЛЕКТРОННАЯ БИБЛИОТЕКА <span class="eyebrow-year">С 1994 ГОДА</span></div><h1>Ищи. Открывай.<br><em>Читай.</em></h1><p class="hero-desc">Книги, стихи, переводы и мемуары. Читайте в удобной типографике, сохраняйте закладки и помогайте вычитывать архив.</p><div class="hero-actions"><button class="button button-dark" id="heroSearch">Найти книгу <span>↗</span></button><a class="text-link" href="#catalog">Открыть каталог <span>↓</span></a></div></div>
+        <div class="hero-art" aria-label="Ретро-пейджер цитат архива Lib.ru">
+          <div class="retro-pager-wrap">
+            <div class="retro-pager">
+              <div class="pager-clip" aria-hidden="true"></div>
+              <div class="pager-header-bar">
+                <div class="pager-brand">
+                  <span class="pager-led" aria-hidden="true"></span>
+                  <span class="pager-model">LIB.RU</span>
+                </div>
+                <span class="pager-counter">MSG 01/08</span>
+              </div>
+              <div class="pager-screen" title="Нажмите для переключения цитаты">
+                <div class="tv-glass-glare" aria-hidden="true"></div>
+                <div class="tv-scanlines" aria-hidden="true"></div>
+                <div class="pager-message-wrap">
+                  <div class="pager-quote">«Рукописи не горят»</div>
+                  <div class="pager-author">— М. Булгаков, «Мастер и Маргарита»</div>
+                </div>
+                <div class="pager-channel">
+                  <span class="pager-dot-live">●</span> ВХОДЯЩИЙ ТЕКСТ · ЦИТАТЫ
+                </div>
+              </div>
+              <div class="pager-controls">
+                <button type="button" class="pager-btn pager-prev" aria-label="Предыдущая цитата" title="Предыдущая цитата">◄</button>
+                <button type="button" class="pager-btn pager-btn-read pager-toggle" aria-label="Пауза или авто-ротация" title="Авто-прокрутка / Пауза">READ</button>
+                <button type="button" class="pager-btn pager-next" aria-label="Следующая цитата" title="Следующая цитата">►</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-retro-capsule" id="heroRetroCapsule">
+          <div class="capsule-topbar">
+            <div class="capsule-stats">
+              <span>&gt;100k текстов</span>
+              <span class="capsule-sep">•</span>
+              <span>&gt;15k авторов</span>
+              <span class="capsule-sep">•</span>
+              <span>&gt;30 лет</span>
+            </div>
+            <span class="capsule-est">est. 1994</span>
+          </div>
+          <div class="capsule-body">
+            <h1 class="capsule-slogan">Ищи. Открывай.<br><em>Читай.</em></h1>
+            <p class="capsule-desc">Книги, переводы и стихи в открытом архиве Lib.ru.</p>
+            <div class="retro-pager-wrap" role="region" aria-label="Ретро-пейджер цитат архива Lib.ru">
+              <div class="retro-pager">
+                <div class="pager-clip" aria-hidden="true"></div>
+                <div class="pager-header-bar">
+                  <div class="pager-brand">
+                    <span class="pager-led" aria-hidden="true"></span>
+                    <span class="pager-model">LIB.RU</span>
+                  </div>
+                  <span class="pager-counter">MSG 01/08</span>
+                </div>
+                <div class="pager-screen" title="Нажмите для переключения цитаты">
+                  <div class="tv-glass-glare" aria-hidden="true"></div>
+                <div class="tv-scanlines" aria-hidden="true"></div>
+                  <div class="pager-message-wrap">
+                    <div class="pager-quote">«Рукописи не горят»</div>
+                    <div class="pager-author">— М. Булгаков, «Мастер и Маргарита»</div>
+                  </div>
+                  <div class="pager-channel">
+                    <span class="pager-dot-live">●</span> ВХОДЯЩИЙ ТЕКСТ · ЦИТАТЫ
+                  </div>
+                </div>
+                <div class="pager-controls">
+                  <button type="button" class="pager-btn pager-prev" aria-label="Предыдущая цитата" title="Предыдущая цитата">◄</button>
+                  <button type="button" class="pager-btn pager-btn-read pager-toggle" aria-label="Пауза или авто-ротация" title="Авто-прокрутка / Пауза">READ</button>
+                  <button type="button" class="pager-btn pager-next" aria-label="Следующая цитата" title="Следующая цитата">►</button>
+                </div>
+              </div>
+            </div>
+            <div class="capsule-actions">
+              <button class="button button-dark capsule-search-btn" id="capsuleSearch">Найти книгу <span>↗</span></button>
+              <a class="text-link capsule-catalog-link" href="#catalog">Открыть каталог <span>↓</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-strip"><div><strong>120 482</strong><span>ТЕКСТА В АРХИВЕ</span></div><div><strong>18 306</strong><span>АВТОРОВ</span></div><div><strong>31 год</strong><span>В СЕТИ</span></div></section>
+
+      <section class="updates-strip" id="recent" aria-label="Новинки и новости библиотеки">
+        <div class="updates-head">
+          <div class="eyebrow"><span class="live-dot"></span> ЛЕНТА ОБНОВЛЕНИЙ · НОВИНКИ И НОВОСТИ АРХИВА</div>
+          <span class="updates-hint">НАВЕДИТЕ КУРСОР ДЛЯ ПАУЗЫ</span>
+        </div>
+        <div class="ticker-viewport">
+          <div class="ticker-track" id="tickerTrack"></div>
+        </div>
+        <div class="updates-actions">
+          <button class="button button-paper" id="toggleUpdates" aria-expanded="false">Смотреть подробнее <span>↓</span></button>
+        </div>
+        <div class="updates-details" id="updatesDetails" hidden>
+          <div class="updates-col">
+            <div class="updates-col-head"><span>НОВИНКИ ФОНДА</span><small>ПОСЛЕДНИЕ ПОСТУПЛЕНИЯ</small></div>
+            <div class="updates-list" id="noveltiesList"></div>
+          </div>
+          <div class="updates-col">
+            <div class="updates-col-head"><span>НОВОСТИ ПРОЕКТА</span><small>ХРОНИКА LIB.RU</small></div>
+            <div class="updates-list" id="newsList"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="catalog">
+        <div class="section-heading"><div><div class="eyebrow section-kicker">01 — ИССЛЕДУЙТЕ</div><h2 class="single-line-heading">Найдите свою <em>следующую книгу.</em></h2></div><a class="all-link" href="#catalog" data-view="catalog">Полный каталог <span>↗</span></a></div>
+        <div class="catalog-layout"><aside class="category-rail"><button type="button" class="rail-label rail-collapse-btn" data-target="homeRailBody" aria-expanded="false"><span>ВЫБРАТЬ РАЗДЕЛ</span><span class="rail-chevron">▸</span></button><div class="rail-body" id="homeRailBody" hidden><div class="tree-nav" id="homeCategoryTree"></div></div></aside>
+          <div class="book-area"><div class="book-toolbar"><div class="result-count"><span id="resultLabel">ПОПУЛЯРНОЕ СЕЙЧАС</span><b>06</b></div><div class="sort-control">СОРТИРОВКА <div class="sort-pills" id="homeSortPills"><button class="sort-pill active" data-sort="popularity">По популярности</button><button class="sort-pill" data-sort="title">По названию</button><button class="sort-pill" data-sort="author">По автору</button><button class="sort-pill" data-sort="newest">По новизне</button></div></div></div><div class="book-grid" id="bookGrid"></div><div class="catalog-bottom"><span id="homePaginationMeta">СТРАНИЦА 1 ИЗ 4 · ПОКАЗАНО 5 ИЗ 18 ТЕКСТОВ</span><div class="pagination" id="homePagination" role="navigation" aria-label="Страницы каталога на главной"></div></div></div></div>
+      </section>
+
+      <section class="authors-section" id="authors"><div class="authors-head"><div><div class="eyebrow section-kicker">02 — АВТОРСКИЙ УКАЗАТЕЛЬ</div><h2>Авторы <em>архива.</em></h2></div><span>ВЫБЕРИТЕ ИМЯ, ЧТОБЫ НАЙТИ КНИГИ</span></div><div class="author-list" id="authorList"></div><div class="authors-more"><a class="button button-paper" href="#authors" data-view="authors">Перейти ко всем авторам <span>↗</span></a></div></section>
+      <section class="guests-home-section"><div class="section-heading"><div><div class="eyebrow section-kicker">03 — МОИ ГОСТИ</div><h2>Авторские архивы<br><em>и полки.</em></h2></div><a class="all-link" href="#guests" data-view="guests">Все гости <span>↗</span></a></div><div class="guests-grid" id="homeGuestsGrid"></div></section>
+    </main>
+
+    <main class="page-view catalog-page" id="catalogPage" hidden>
+      <div class="about-page-top"><a class="about-back" href="#home" data-view="home">← <span>НА ГЛАВНУЮ</span></a><span class="about-crumb">LIB.RU / ПОЛНЫЙ КАТАЛОГ</span></div>
+      <section class="full-page-section">
+        <div class="catalog-layout full-catalog-layout">
+          <aside class="category-rail">
+            <button type="button" class="rail-label rail-collapse-btn" data-target="fullRailBody" aria-expanded="false"><span>ВЫБРАТЬ РАЗДЕЛ</span><span class="rail-chevron">▸</span></button>
+            <div class="rail-body" id="fullRailBody" hidden>
+              <div class="tree-nav" id="fullCategoryTree"></div>
+            </div>
+          </aside>
+          <div class="book-area">
+            <div class="book-toolbar">
+              <div class="result-count"><span id="fullCatalogLabel">ВСЕ ТЕКСТЫ</span><b id="fullCatalogCount">18</b></div>
+              <div class="sort-control">СОРТИРОВКА <div class="sort-pills" id="fullSortPills"><button class="sort-pill active" data-sort="popularity">По популярности</button><button class="sort-pill" data-sort="title">По названию</button><button class="sort-pill" data-sort="author">По автору</button><button class="sort-pill" data-sort="newest">По новизне</button></div></div>
+            </div>
+            <div class="book-grid" id="fullCatalogGrid"></div>
+            <div class="catalog-bottom"><span id="fullPaginationMeta">СТРАНИЦА 1 ИЗ 2 · ПОКАЗАНО 10 ИЗ 18 ТЕКСТОВ</span><div class="pagination" id="fullPagination" role="navigation" aria-label="Страницы полного каталога"></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <main class="page-view authors-page" id="authorsPage" hidden>
+      <div class="about-page-top"><a class="about-back" href="#home" data-view="home">← <span>НА ГЛАВНУЮ</span></a><span class="about-crumb">LIB.RU / ВСЕ АВТОРЫ</span></div>
+      <section class="full-page-section">
+        <div class="section-heading"><div><div class="eyebrow section-kicker">АЛФАВИТНЫЙ УКАЗАТЕЛЬ</div><h2>Все авторы <em>архива.</em></h2></div></div>
+        <div class="authors-controls">
+          <div class="authors-mode-selector" id="authorsModeSelector" role="tablist" aria-label="Выбор каталога авторов">
+            <button type="button" class="authors-mode-tab active" data-mode="all" role="tab" aria-selected="true">Все авторы</button>
+            <button type="button" class="authors-mode-tab" data-mode="en" role="tab" aria-selected="false">Английский алфавит</button>
+            <button type="button" class="authors-mode-tab" data-mode="ru" role="tab" aria-selected="false">Русский алфавит</button>
+          </div>
+          <div class="authors-alphabet-bar" id="authorsAlphabetBar" role="toolbar" aria-label="Алфавитный фильтр"></div>
+        </div>
+        <div class="author-list full-author-list" id="fullAuthorList"></div>
+        <div class="catalog-bottom authors-pagination-wrap" id="authorsPaginationWrap">
+          <span id="authorsPaginationMeta">СТРАНИЦА 1 ИЗ 2 · ПОКАЗАНО 20 ИЗ 37 АВТОРОВ</span>
+          <div class="pagination" id="authorsPagination" role="navigation" aria-label="Страницы списка авторов"></div>
+        </div>
+      </section>
+    </main>
+
+    <main class="page-view hitparad-page" id="hitparadPage" hidden>
+      <div class="about-page-top"><a class="about-back" href="#home" data-view="home">← <span>НА ГЛАВНУЮ</span></a><span class="about-crumb">LIB.RU / ХИТ-ПАРАД</span></div>
+      <section class="full-page-section hitparad-section">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow section-kicker">РЕЙТИНГ ЧИТАТЕЛЬСКИХ СИМПАТИЙ</div>
+            <h2>Хит-парад <em>книг архива.</em></h2>
+          </div>
+          <span class="guests-epigraph">«Настоящий хит-парад складывается из сотен читательских оценок»</span>
+        </div>
+        <!-- ТОП-5 ПЬЕДЕСТАЛ -->
+        <div class="hitparad-podium-section">
+          <div class="badges-head podium-head">
+            <span class="eyebrow" id="podiumEyebrow"><span class="live-dot"></span> ПЬЕДЕСТАЛ ПОЧЁТА</span>
+          </div>
+          <div class="podium-container" id="hitparadPodium"></div>
+        </div>
+
+        <!-- ОСНОВНОЙ РЕЙТИНГ МЕСТА 6+ -->
+        <div class="hitparad-table-section">
+          <div class="badges-head table-head">
+            <span class="eyebrow" id="hitparadTableEyebrow">ОСНОВНОЙ РЕЙТИНГ</span>
+          </div>
+          <div class="hitparad-table-card">
+            <div class="hitparad-table-header">
+              <span class="th-rank">МЕСТО</span>
+              <span class="th-title">ПРОИЗВЕДЕНИЕ И АВТОР</span>
+              <span class="th-score">БАЛЛ</span>
+              <span class="th-votes">ГОЛОСА</span>
+            </div>
+            <div class="hitparad-table-rows" id="hitparadTableRows"></div>
+          </div>
+          <div class="catalog-bottom hitparad-pagination-wrap">
+            <span id="hitparadPaginationMeta">СТРАНИЦА 1 ИЗ 2 · МЕСТА 6–15</span>
+            <div class="pagination" id="hitparadPagination" role="navigation" aria-label="Страницы списка хит-парада"></div>
+          </div>
+        </div>
+
+        <!-- ДВА БЛОКА: КРИТЕРИИ ОЦЕНКИ И ПРАВИЛА ХИТ-ПАРАДА -->
+        <div class="hitparad-info-section">
+          <div class="criteria-block">
+            <div class="section-heading">
+              <div>
+                <div class="eyebrow section-kicker">ШКАЛА ОЦЕНИВАНИЯ</div>
+                <h2>Критерии <em>оценки.</em></h2>
+              </div>
+            </div>
+            <div class="criteria-bar-wrap">
+              <div class="criteria-pagination-row" id="criteriaPaginationRow" role="group" aria-label="Шкала критериев оценки">
+                <button type="button" class="page-btn page-btn-prev" id="criteriaPrevBtn" aria-label="Предыдущие критерии">←</button>
+                <div class="criteria-cards-track" id="criteriaCardsTrack"></div>
+                <button type="button" class="page-btn page-btn-next" id="criteriaNextBtn" aria-label="Следующие критерии">→</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="rules-block">
+            <div class="hitparad-rules-card">
+              <div class="hitparad-rules-header">
+                <div class="eyebrow"><span class="live-dot"></span> ПРАВИЛА «ХИТПАРАДА»</div>
+                <span class="hitparad-rules-badge">РЕЙТИНГОВАЯ СИСТЕМА LIB.RU</span>
+              </div>
+              <div class="hitparad-rules-body">
+                <div class="rule-item">
+                  <span class="rule-label">[ЦЕЛЬ]</span>
+                  <p>Дать возможность посетителям библиотеки открыто оценивать все выложенные в online тексты по 10-балльной системе.</p>
+                </div>
+                <div class="rule-item">
+                  <span class="rule-label">[ГОЛОСОВАНИЕ]</span>
+                  <p>Голосовать за один и тот же текст можно сколько угодно раз, в окончательный расчёт принимается только последняя оценка читателя.</p>
+                </div>
+                <div class="rule-item">
+                  <span class="rule-label">[ПОДСЧЁТ БАЛЛОВ]</span>
+                  <p>При подсчёте, как в фигурном катании, по одной самой высокой и самой низкой оценке отбрасывается для исключения случайных крайностей.</p>
+                </div>
+                <div class="rule-item">
+                  <span class="rule-label">[ПЛАНЫ И ЗАЩИТА]</span>
+                  <p>В оглавлении библиотеки предполагается выводить средний балл каждого текста. Статистический анализ применяется для выявления искусственных накруток.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- АЛЬТЕРНАТИВНЫЕ ХИТПАРАДЫ И РЕЙТИНГИ -->
+        <div class="alt-rankings-section">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow section-kicker">АРХИВЫ ГОЛОСОВАНИЙ И ЧАРТЫ</div>
+              <h2>Альтернативные хитпарады <em>и рейтинги.</em></h2>
+            </div>
+            <span class="guests-epigraph">«Специальные и внешние чарты фантастики, детской книги и мировой классики»</span>
+          </div>
+
+          <div class="guests-controls alt-controls">
+            <div class="authors-mode-selector" id="altRankingsSelector" role="tablist" aria-label="Выбор категории альтернативных рейтингов">
+              <button type="button" class="authors-mode-tab active" data-alt-mode="libru" role="tab" aria-selected="true">Рейтинги Lib.ru</button>
+              <button type="button" class="authors-mode-tab" data-alt-mode="external" role="tab" aria-selected="false">Другие рейтинги</button>
+            </div>
+          </div>
+
+          <div class="guests-grid alt-rankings-grid" id="altRankingsGrid"></div>
+
+          <div class="catalog-bottom alt-pagination-wrap">
+            <span id="altPaginationMeta">СТРАНИЦА 1 ИЗ 2 · ПОКАЗАНО 3 ИЗ 6 РЕЙТИНГОВ</span>
+            <div class="pagination" id="altPagination" role="navigation" aria-label="Страницы альтернативных рейтингов"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <main class="page-view guests-page" id="guestsPage" hidden>
+      <div class="about-page-top"><a class="about-back" href="#home" data-view="home">← <span>НА ГЛАВНУЮ</span></a><span class="about-crumb">LIB.RU / МОИ ГОСТИ</span></div>
+      <section class="full-page-section">
+        <div class="section-heading"><div><div class="eyebrow section-kicker">МОИ ГОСТИ · ДРУГИЕ ПРОЕКТЫ</div><h2>Авторские сайты и <em>спецпроекты на Lib.ru.</em></h2></div><span class="guests-epigraph">«Единственное, что надёжнее, чем магия — это твои друзья»</span></div>
+        <div class="guests-controls">
+          <div class="authors-mode-selector guests-mode-selector" id="guestsModeSelector" role="tablist" aria-label="Выбор каталога проектов">
+            <button type="button" class="authors-mode-tab active" data-guests-mode="special" role="tab" aria-selected="true">Спецпроекты</button>
+            <button type="button" class="authors-mode-tab" data-guests-mode="other" role="tab" aria-selected="false">Другие сайты</button>
+          </div>
+        </div>
+        <div class="guests-grid full-guests-grid" id="fullGuestsGrid"></div>
+      </section>
+    </main>
+
+    <main class="page-view community-page" id="communityPage" hidden>
+      <div class="about-page-top"><a class="about-back" href="#home" data-view="home">← <span>НА ГЛАВНУЮ</span></a><span class="about-crumb">LIB.RU / СООБЩЕСТВО</span></div>
+      <section class="community-section" id="community">
+        <div class="community-layout-wrap" id="communityLayoutWrap">
+          <div class="community-copy">
+            <div class="eyebrow"><span class="live-dot"></span> СООБЩЕСТВО ЧИТАТЕЛЕЙ</div>
+            <h2>Читай. Оценивай. <em>Общайся.</em></h2>
+            <p>Архив объединяет читателей, исследователей и любителей словесности. Делитесь впечатлениями, выставляйте оценки книгам и открывайте читательские звания фонда.</p>
+            <div class="community-badges-wrap" id="communityBadgesWrap">
+              <div class="badges-head">
+                <span class="eyebrow">СИСТЕМА ЧИТАТЕЛЬСКИХ РАНГОВ</span>
+                <span class="badges-status-summary">4 СТУПЕНИ ДОСТИЖЕНИЙ</span>
+              </div>
+              <div class="badges-grid" id="communityBadgesGrid">
+                <div class="badge-card">
+                  <div class="badge-icon">🌱</div>
+                  <div class="badge-info">
+                    <h3>Новичок</h3>
+                    <p>Первая открытая книга архива</p>
+                  </div>
+                  <span class="badge-pill">СТАРТ</span>
+                </div>
+                <div class="badge-card">
+                  <div class="badge-icon">★</div>
+                  <div class="badge-info">
+                    <h3>Ревизор</h3>
+                    <p>Более 10 оценок и отзывов</p>
+                  </div>
+                  <span class="badge-pill">ОЦЕНКИ</span>
+                </div>
+                <div class="badge-card">
+                  <div class="badge-icon">📖</div>
+                  <div class="badge-info">
+                    <h3>Книгочей</h3>
+                    <p>Собрал архив в избранном</p>
+                  </div>
+                  <span class="badge-pill">ПОЛКА</span>
+                </div>
+                <div class="badge-card">
+                  <div class="badge-icon">📜</div>
+                  <div class="badge-info">
+                    <h3>Архивариус</h3>
+                    <p>Завсегдатай портала</p>
+                  </div>
+                  <span class="badge-pill">МАСТЕР</span>
+                </div>
+              </div>
+            </div>
+            <div class="community-actions">
+              <button type="button" class="button button-dark" id="communityProfileBtn">Перейти в профиль <span>↗</span></button>
+            </div>
+          </div>
+          <div class="community-aside-slot" id="communityAsideSlot">
+            <div class="retro-tv-wrap" id="retroTvWrap" role="region" aria-label="Ретро-телевизор читательского эфира">
+          <div class="retro-tv-antenna" aria-hidden="true">
+            <span class="tv-antenna-left"></span>
+            <span class="tv-antenna-stem"></span>
+            <span class="tv-antenna-right"></span>
+          </div>
+          <div class="retro-tv" id="retroTv">
+            <div class="tv-bezel">
+              <div class="tv-screen-frame">
+                <div class="tv-crt-tube" id="tvCrtTube" title="Нажмите для переключения канала">
+                  <div class="tv-glass-glare" aria-hidden="true"></div>
+                  <div class="tv-scanlines" aria-hidden="true"></div>
+                  <div class="tv-screen-content">
+                    <div class="tv-osd-top">
+                      <span class="tv-channel-tag" id="tvChannelTag">CH 04 · В ЭФИРЕ</span>
+                      <span class="tv-live-badge"><span class="tv-dot-rec">●</span> LIVE</span>
+                    </div>
+                    <div class="tv-broadcast-body" id="tvBroadcastBody">
+                      <span class="tv-event-type" id="tvEventType">[ПРОЧИТАНО]</span>
+                      <h4 class="tv-event-title" id="tvEventTitle">«Мастер и Маргарита»</h4>
+                      <p class="tv-event-desc" id="tvEventDesc">Читатель @moshkow завершил чтение романа · +150 стр</p>
+                    </div>
+                    <div class="tv-osd-bottom">
+                      <span class="tv-freq">1994 МГц</span>
+                      <span class="tv-ticker-hint">ЭФИР СООБЩЕСТВА</span>
+                    </div>
+                  </div>
+                  <div class="tv-static-noise" id="tvStaticNoise" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="tv-controls-panel">
+                <div class="tv-brand-plate">LIB.RU · TV-94</div>
+                <div class="tv-knobs-group">
+                  <div class="tv-knob-wrap">
+                    <button type="button" class="tv-knob" id="tvChannelKnob" aria-label="Переключить канал" title="Переключить канал">
+                      <span class="knob-notch"></span>
+                    </button>
+                    <span class="tv-knob-label">КАНАЛ</span>
+                  </div>
+
+                </div>
+                <div class="tv-buttons-group">
+                  <button type="button" class="tv-btn tv-btn-ch" id="tvPrevCh" aria-label="Предыдущий канал" title="Канал назад">▲</button>
+                  <button type="button" class="tv-btn tv-btn-ch" id="tvNextCh" aria-label="Следующий канал" title="Канал вперед">▼</button>
+                </div>
+                <div class="tv-speaker" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="tv-power-group">
+                  <button type="button" class="tv-power-btn on" id="tvPowerBtn" aria-label="Включить / Выключить ТВ" title="Вкл / Выкл ТВ">
+                    <span class="tv-power-led" id="tvPowerLed"></span>
+                  </button>
+                  <span class="tv-power-label">СЕТЬ</span>
+                </div>
+              </div>
+            </div>
+            <div class="tv-feet" aria-hidden="true">
+              <span class="tv-foot foot-left"></span>
+              <span class="tv-foot foot-right"></span>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <main class="page-view about-page" id="aboutPage" hidden>
+      <div class="about-page-top"><a class="about-back" href="#home" data-view="home">← <span>НА ГЛАВНУЮ</span></a><span class="about-crumb">LIB.RU / О ПРОЕКТЕ И СОЗДАТЕЛЕ</span></div>
+      <section class="about-section" id="about">
+        <div class="about-intro">
+          <div class="eyebrow section-kicker">СОЗДАТЕЛЬ И АРХИТЕКТОР</div>
+          <div class="about-person-card">
+            <img class="about-photo" src="moshkow.png" alt="Максим Евгеньевич Мошков" width="131" height="180">
+            <div class="about-person-meta">
+              <span class="eyebrow">ДОМАШНЯЯ СТРАНИЦА · ~MOSHKOW</span>
+              <h3>Максим Евгеньевич Мошков</h3>
+              <p>Unix &amp; Network Administrator, Informix DBA, VMware Certified Instructor, основатель Lib.ru.</p>
+              <div class="about-kv">
+                <div><span>E-MAIL</span><b>max@lib.ru</b></div>
+                <div><span>ОБРАЗОВАНИЕ</span><b>МГУ, мехмат ('89)</b></div>
+                <div><span>СТЕК И КОЛЛЕКЦИЯ</span><b>Unix (FreeBSD, Solaris, HP-UX, Linux), Perl, C, awk, sh, Informix</b></div>
+              </div>
+              <a class="about-source" href="http://lib.ru/~moshkow/" target="_blank" rel="noreferrer">Личная страница (lib.ru/~moshkow) <span>↗</span></a>
+            </div>
+          </div>
+          <div class="about-bio">
+            <p>Родился 13 октября 1966 года. Выпускник московской школы № 57 (1983) и механико-математического факультета МГУ (1989), аспирант кафедры теории функций и функционального анализа.</p>
+            <p>С 1991 года работал в Институте проблем управления РАН и учебном центре HP. Системный и сетевой администратор Unix, специалист по СУБД Informix, виртуализации VMware, Linux и Kubernetes, преподаватель технических курсов.</p>
+            <p>В ноябре 1994 года запустил Lib.ru, поддерживая и пополняя библиотеку вместе с авторами и читателями. Участвовал в создании и техническом запуске ранних проектов Рунета: Lenta.ru, Gazeta.ru, Vesti.ru. В 2020 году награждён медалью ордена «За заслуги перед Отечеством» II степени за вклад в развитие российского сегмента интернета.</p>
+          </div>
+        </div>
+        <div class="about-facts">
+          <div class="eyebrow section-kicker">ХРОНИКА И ЭКОСИСТЕМА</div>
+          <h2 class="about-history-title">История <em>проектов.</em></h2>
+          <div class="about-timeline"><span>1994.11</span><div><b>Запуск Lib.ru</b><small>Старейшая библиотека Рунета</small></div><span class="timeline-arrow">→</span><span>2000+</span><div><b>Экосистема проектов</b><small>Samlib.ru, Az.lib.ru, Fan.lib.ru, ArtOfWar.ru, Music.lib.ru</small></div></div>
+          <div class="about-principles">
+            <div><span>1994</span><b>Библиотека Максима Мошкова (Lib.ru)</b><small>Открыта в ноябре 1994 года на базе сервера в ИПУ РАН; пополняется силами авторов, переводчиков и читателей.</small></div>
+            <div><span>1999–09</span><b>Участие в становлении веб-СМИ</b><small>Разработка и системное администрирование серверов Gazeta.ru, Vesti.ru, Lenta.ru и ряда публичных спецпроектов.</small></div>
+            <div><span>2000–12</span><b>Тематические и авторские площадки</b><small>Журнал «Самиздат» (2000), «Музыкальный хостинг» (2000), «Заграница» и «Туризм» (2002), ArtOfWar.ru и Fan.lib.ru (2004), Az.lib.ru (2012).</small></div>
+            <div><span>UNIX</span><b>Инженерный фундамент и коллекция ОС</b><small>Собрание десятков исторических ОС Unix (от 386bsd и SunOS до HP-UX и Linux) и многолетняя школа системного администрирования.</small></div>
+          </div>
+          <a class="about-source source-secondary" href="http://lib.ru/" target="_blank" rel="noreferrer">Оригинальный сайт Lib.ru <span>↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><a class="brand footer-brand" href="#home" data-view="home"><span class="brand-mark"><svg class="logo-img logo-light-theme" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#20241f"/><g fill="#fffefa" shape-rendering="crispEdges"><rect x="4" y="11" width="3" height="18"/><rect x="4" y="26" width="7" height="3"/><rect x="22" y="11" width="14" height="3"/><rect x="22" y="18.5" width="8" height="3"/><rect x="22" y="26" width="14" height="3"/></g><polygon points="12,29 15,29 20,11 17,11" fill="#c45129"/></svg><svg class="logo-img logo-dark-theme" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#fffefa"/><g fill="#20241f" shape-rendering="crispEdges"><rect x="4" y="11" width="3" height="18"/><rect x="4" y="26" width="7" height="3"/><rect x="22" y="11" width="14" height="3"/><rect x="22" y="18.5" width="8" height="3"/><rect x="22" y="26" width="14" height="3"/></g><polygon points="12,29 15,29 20,11 17,11" fill="#c45129"/></svg></span><span>LIB.RU<small>БИБЛИОТЕКА МОШКОВА</small></span></a><div><a href="#catalog" data-view="catalog">Полный каталог</a><a href="#authors" data-view="authors">Авторы</a><a href="#hitparad" data-view="hitparad">Хит-парад</a><a href="#guests" data-view="guests">Мои гости</a><a href="#community" data-view="community">Сообщество</a><a href="#about" data-view="about">О проекте</a></div><span class="footer-copy">© LIB.RU 1994—2026</span></footer>
+  </div>
+
+  <dialog id="searchDialog"><form method="dialog" class="search-modal"><div class="modal-top"><span>ПОИСК ПО БИБЛИОТЕКЕ</span><button class="close-button" aria-label="Закрыть">×</button></div><label class="search-box"><span>⌕</span><input id="searchInput" placeholder="Название, автор или строка текста…" autocomplete="off"><kbd>ESC</kbd></label><div class="search-hint">НАПРИМЕР <button type="button" data-query="Достоевский">Достоевский</button><button type="button" data-query="поэзия">поэзия</button><button type="button" data-query="фантастика">фантастика</button></div><div class="search-results" id="searchResults"></div></form></dialog>
+  <dialog id="readerDialog"><div class="reader"><div class="reader-bar"><button class="reader-back" id="readerClose">← <span>К КАТАЛОГУ</span></button><span class="reader-label">LIB.RU / ЧИТАЛЬНЫЙ ЗАЛ</span><div class="reader-tools"><button id="fontDown" aria-label="Уменьшить шрифт">A−</button><button id="fontUp" aria-label="Увеличить шрифт">A+</button></div></div><div class="reader-progress"><span id="progressBar"></span></div><div class="reader-layout"><aside class="reader-aside"><div class="reader-cli-progress theme-orange" id="readerCliProgress" aria-label="Прогресс чтения"><span class="cli-prog-label">ЧТЕНИЕ</span><span class="cli-prog-bar" id="cliProgBar">[<span class="cli-bar-fill" id="cliProgFilled"></span><span class="cli-bar-empty" id="cliProgEmpty">----------</span>]</span><span class="cli-prog-pct" id="cliProgPct">0%</span></div><h2 id="readerTitle">Название</h2><p id="readerAuthor" class="reader-author-link" title="Смотреть все книги автора в каталоге" tabindex="0" role="button">Автор ↗</p><div class="reader-aside-rule"></div><div class="reader-meta">РАЗДЕЛ <b>РУССКАЯ КЛАССИКА</b></div><div class="reader-meta">ОБЪЁМ <b>~ 12 МИНУТ</b></div><div class="reader-chapters"><div class="eyebrow">ОГЛАВЛЕНИЕ</div><div id="chapterList"></div></div><button class="save-button" id="saveBook">☆ <span>Сохранить в закладки</span></button><button class="review-scroll-button" id="readerReviewScrollBtn">★ <span>Оценить и оставить отзыв</span></button></aside><article class="reading-content" id="readingContent"><div class="chapter-mark" id="chapterMark">АВТОР</div><h1 id="readingHeading">Название</h1><p class="reading-byline" id="readingByline">— ГЛАВА ПЕРВАЯ —</p><div id="readingText"></div><div class="reader-end">ФРАГМЕНТ ТЕКСТА <span>↓</span></div><section class="book-review-section" id="bookReviewSection"><div class="review-nav-bar"><button type="button" class="back-to-text-btn" id="backToTextBtn">↑ В начало</button><span class="review-chapter-tag" id="reviewChapterTag">— ГЛАВА ПЕРВАЯ —</span></div><div class="review-head"><div class="eyebrow review-kicker">ОЦЕНКА И ОТЗЫВ</div><h3 class="review-title">Оцените произведение</h3></div><form class="book-review-form" id="bookReviewForm" onsubmit="return false;"><div class="rating-field"><div class="rating-field-header"><span class="rating-label">ВАША ОЦЕНКА:</span><span class="rating-feedback" id="ratingFeedback">Выберите от I до V</span></div><div class="rating-scale" id="ratingScale" role="radiogroup" aria-label="Шкала оценки от I до V"><button type="button" class="rating-step" data-score="1" aria-label="I балл — Слабо" title="I — Слабо"><svg class="rating-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v6l2.5-1.5L17 12V6" fill="currentColor"/></svg><span class="rating-roman">I</span></button><button type="button" class="rating-step" data-score="2" aria-label="II балла — Посредственно" title="II — Посредственно"><svg class="rating-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v6l2.5-1.5L17 12V6" fill="currentColor"/></svg><span class="rating-roman">II</span></button><button type="button" class="rating-step" data-score="3" aria-label="III балла — Хорошо" title="III — Хорошо"><svg class="rating-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v6l2.5-1.5L17 12V6" fill="currentColor"/></svg><span class="rating-roman">III</span></button><button type="button" class="rating-step" data-score="4" aria-label="IV балла — Очень хорошо" title="IV — Очень хорошо"><svg class="rating-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v6l2.5-1.5L17 12V6" fill="currentColor"/></svg><span class="rating-roman">IV</span></button><button type="button" class="rating-step" data-score="5" aria-label="V баллов — Шедевр" title="V — Шедевр"><svg class="rating-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v6l2.5-1.5L17 12V6" fill="currentColor"/></svg><span class="rating-roman">V</span></button></div></div><div class="comment-field"><label for="reviewComment" class="comment-label">КОММЕНТАРИЙ К КНИГЕ:</label><textarea id="reviewComment" class="review-comment-input" rows="3" placeholder="Поделитесь впечатлениями о прочитанном или оставьте поле пустым…"></textarea></div><div class="review-actions"><button type="submit" class="button button-dark review-submit-btn" id="reviewSubmitBtn">Сохранить оценку <span>→</span></button></div></form><div class="book-reviews-wrap" id="bookReviewsWrap"><div class="reviews-head-bar"><span>ОТЗЫВЫ ЧИТАТЕЛЕЙ АРХИВА</span><b id="bookReviewsCount">0</b></div><div class="book-reviews-list" id="bookReviewsList"></div></div></section></article></div><div class="mobile-progress"><span id="mobileProgress">ГЛАВА ПЕРВАЯ · 0%</span><button id="mobileReviewBtn" class="mobile-review-btn" aria-label="Оценить книгу" title="Оценить книгу">★</button></div></div></dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="books.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
