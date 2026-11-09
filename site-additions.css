@@ -91,7 +91,7 @@ body.dark .search-results::-webkit-scrollbar-thumb,body.dark .reading-content::-
 .book-card{container-type:inline-size;display:flex;flex-direction:column;justify-content:space-between}
 .cover{min-height:194px;height:auto;gap:10px}
 .cover span{font-size:10px;line-height:1.3;word-break:break-word}
-.cover b{font:500 clamp(16px,7.2cqw,22px)/1.14 var(--serif);max-width:100%;overflow-wrap:break-word;hyphens:auto}
+.cover b{font:500 22px/1.18 var(--serif);max-width:100%;overflow-wrap:break-word;hyphens:auto}
 .cover small{font-size:10px;line-height:1.35;overflow-wrap:break-word}
 .book-info{display:flex;flex-direction:column;flex:1;padding:14px}
 .book-info h3{font:500 clamp(14px,6.2cqw,18px)/1.3 var(--serif);margin:0 0 6px;overflow-wrap:break-word}
@@ -361,7 +361,7 @@ body.dark .search-box:focus-within{border-color:var(--orange);box-shadow:3px 3px
   .sort-pill{padding:4px 8px;font-size:10px}
   .book-grid{grid-template-columns:repeat(2,1fr);gap:10px}
   .cover{min-height:154px;padding:10px}
-  .cover b{font-size:clamp(14px,4vw,18px)}
+  .cover b{font-size:18px}
   .authors-controls{gap:10px;margin:12px 0 18px}
   .authors-mode-tab{padding:6px 12px;font-size:12px}
   .authors-alphabet-bar{justify-content:flex-start;padding:6px 8px}
@@ -658,7 +658,7 @@ body.dark .search-box:focus-within{border-color:var(--orange);box-shadow:3px 3px
 }
 
 .cover b {
-  font: 500 clamp(16px, 6.2cqw, 20px)/1.22 var(--serif) !important;
+  font: 500 22px/1.18 var(--serif) !important;
   letter-spacing: -0.01em;
   display: block;
   max-width: 100% !important;
@@ -777,11 +777,29 @@ body.dark .cover.sand .cover-foot, body.dark .cover.cream .cover-foot {
     margin-bottom: 6px !important;
   }
   .cover b {
-    font-size: 15px !important;
+    font-size: 18px !important;
     line-height: 1.2 !important;
   }
   .cover-top, .cover-foot {
     font-size: 9px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .cover b {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cover b {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .cover b {
+    font-size: 15px !important;
   }
 }
 
