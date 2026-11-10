@@ -908,8 +908,8 @@ readerDialog.addEventListener('close',closeReaderCleanly);
 document.getElementById('backToTextBtn')?.addEventListener('click',scrollToTextTop);
 readingContent.addEventListener('scroll',()=>{updateProgress();localStorage.setItem(`libru-position-${activeBook.title}-${activeChapter}`,String(readingContent.scrollTop));localStorage.setItem(`libru-chapter-${activeBook.title}`,String(activeChapter))});
 function updateCliProgress(pct){
- const totalBlocks=10;
- const filledCount=Math.min(totalBlocks,Math.max(0,Math.round(pct/10)));
+ const totalBlocks=20;
+ const filledCount=Math.min(totalBlocks,Math.max(0,Math.round(pct * totalBlocks / 100)));
  const emptyCount=totalBlocks-filledCount;
  const filledEl=document.getElementById('cliProgFilled');
  const emptyEl=document.getElementById('cliProgEmpty');
@@ -1094,7 +1094,7 @@ function initRetroPager(){
    const toggleBtn=pager.querySelector('.pager-toggle');
    if(toggleBtn){
     toggleBtn.textContent=isPaused?'HOLD':'READ';
-    toggleBtn.style.color=isPaused?'var(--orange)':'#7de88b';
+    toggleBtn.style.color='#7de88b';
    }
   });
   if(isPaused){stopAuto();}
@@ -1593,9 +1593,10 @@ function renderCriteriaCards() {
   track.innerHTML = visibleItems.map((c, i) => {
     const globalIdx = criteriaStartIndex + i;
     return `
-      <article class="criterion-card" data-idx="${globalIdx}" tabindex="0" role="button" aria-label="Критерий ${c.roman}: ${c.title}">
-        <h3><span class="criterion-roman">${c.roman}</span> ${c.title}</h3>
-        <p>${c.desc}</p>
+      <article class="criterion-card criterion-card-centered" data-idx="${globalIdx}" tabindex="0" role="button" aria-label="Критерий ${c.roman}: ${c.title}">
+        <div class="criterion-roman-badge" aria-hidden="true">${c.roman}</div>
+        <h3 class="criterion-short-title">${c.title}</h3>
+        <p class="criterion-full-desc">${c.desc}</p>
       </article>
     `;
   }).join('');
